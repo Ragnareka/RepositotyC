@@ -25,10 +25,17 @@ internal class Program
                 while (Press("y/n") == "n");//проверяем. что пользователь все ввел что хотел
             b1 = b1-b2;// вычитаем из первого уравнения второе
             k1 = k1-k2;
-            
-            double x = -k1/b1;// находим x
-            double y = b2*x+k2;//// находим y
-            Console.WriteLine($" пересечение будет в координатах: ({Math.Round(x,2)},{Math.Round(y,2)})");
+            if (k1 != 0) // добралась до эталонного решения
+            {
+                if (b1 != 0) 
+                {
+                double x = -k1/b1;// находим x
+                double y = b2*x+k2;//// находим y
+                Console.WriteLine($" пересечение будет в координатах: ({Math.Round(x,2)},{Math.Round(y,2)})");
+                } 
+                else {Console.WriteLine("прямые совпадают");}
+            }
+            else  {Console.WriteLine("прямые параллельны");}
         }
 
 
